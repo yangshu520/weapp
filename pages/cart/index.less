@@ -1,0 +1,139 @@
+page{
+    padding-bottom: 90rpx;
+}
+.revice-address{
+    .address-btn{
+        button{
+            margin-top: 20rpx;
+            margin-bottom: 20rpx;
+            padding: 20rpx;
+            width: 80%;
+            font-weight: normal;
+        }
+    }
+    .user{
+        display: flex;
+        padding: 20rpx;
+        .user-info{
+            flex: 5;
+        }
+        .user-phone{
+            flex: 3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+}
+// 购物车 部分
+.cart-content{
+    .cart-title{
+        padding: 20rpx;
+        font-size: 36rpx;
+        color:var(--colorA);
+        border-top: 2rpx solid currentColor;
+        border-bottom: 2rpx solid currentColor;
+    }
+    .cart-main{
+        .cart-item{
+            display: flex;
+            padding: 20rpx 5rpx;
+            .cart-check{
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .cart-img{
+                flex:2;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                image{
+                    width: 80%;
+                }
+            }
+            .cart-info{
+                flex: 4;
+                flex-direction: column;
+                justify-content: space-around;
+                .info-name{
+                    display: -webkit-box;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    color:#666
+                }
+                .info-price{
+                    display: flex;
+                    justify-content: space-between;
+                    padding-top: 50rpx;
+                    .prices{
+                        color:var(--colorA);
+                        font-size: 34rpx;
+                    }
+                    .num-tool{
+                        display: flex;
+                        .num-edit{
+                            width: 55rpx;
+                            height: 55rpx;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border: 1rpx solid #ccc;
+                        } 
+                        .num{
+                            width: 55rpx;
+                            height: 55rpx;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+        }
+         
+    }
+    
+}
+// footer 部分
+.footer-tool{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 90rpx;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    border-top: 2rpx solid #ccc;
+    .all-check{
+        flex: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .total-price{
+        flex: 4;
+        text-align: right;
+        padding-right: 20rpx;
+        .prices{
+            .price-text{
+                color: var(--colorA);
+                font-size: 34rpx;
+            }
+            .baoyou{}
+        }
+    }
+    .order-pay{
+        flex: 3;
+        color: #fff;
+        background-color: var(--colorA);
+        font-size: 32rpx;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

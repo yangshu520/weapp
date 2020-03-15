@@ -1,0 +1,15 @@
+.tab-list .list-title {
+  display: flex;
+}
+.tab-list .list-title .title {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 15rpx 0;
+  border-bottom: 3rpx solid #666;
+}
+.tab-list .list-title .active {
+  color: var(--colorA);
+  border-bottom: 3rpx solid currentColor;
+}

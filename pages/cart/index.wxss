@@ -1,0 +1,123 @@
+page {
+  padding-bottom: 90rpx;
+}
+.revice-address .address-btn button {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  width: 80%;
+  font-weight: normal;
+}
+.revice-address .user {
+  display: flex;
+  padding: 20rpx;
+}
+.revice-address .user .user-info {
+  flex: 5;
+}
+.revice-address .user .user-phone {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-content .cart-title {
+  padding: 20rpx;
+  font-size: 36rpx;
+  color: var(--colorA);
+  border-top: 2rpx solid currentColor;
+  border-bottom: 2rpx solid currentColor;
+}
+.cart-content .cart-main .cart-item {
+  display: flex;
+  padding: 20rpx 5rpx;
+}
+.cart-content .cart-main .cart-item .cart-check {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-content .cart-main .cart-item .cart-img {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-content .cart-main .cart-item .cart-img image {
+  width: 80%;
+}
+.cart-content .cart-main .cart-item .cart-info {
+  flex: 4;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.cart-content .cart-main .cart-item .cart-info .info-name {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #666;
+}
+.cart-content .cart-main .cart-item .cart-info .info-price {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50rpx;
+}
+.cart-content .cart-main .cart-item .cart-info .info-price .prices {
+  color: var(--colorA);
+  font-size: 34rpx;
+}
+.cart-content .cart-main .cart-item .cart-info .info-price .num-tool {
+  display: flex;
+}
+.cart-content .cart-main .cart-item .cart-info .info-price .num-tool .num-edit {
+  width: 55rpx;
+  height: 55rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #ccc;
+}
+.cart-content .cart-main .cart-item .cart-info .info-price .num-tool .num {
+  width: 55rpx;
+  height: 55rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-tool {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 90rpx;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  border-top: 2rpx solid #ccc;
+}
+.footer-tool .all-check {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-tool .total-price {
+  flex: 4;
+  text-align: right;
+  padding-right: 20rpx;
+}
+.footer-tool .total-price .prices .price-text {
+  color: var(--colorA);
+  font-size: 34rpx;
+}
+.footer-tool .order-pay {
+  flex: 3;
+  color: #fff;
+  background-color: var(--colorA);
+  font-size: 32rpx;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
