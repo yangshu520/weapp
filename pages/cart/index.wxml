@@ -26,7 +26,7 @@
                     </checkbox-group>
                 </view>
                 <!-- 商品图品 -->
-                <navigator class="cart-img">
+                <navigator class="cart-img" url="/pages/goods_detail/index?goods_id={{item.goods_id}}">
                     <image src="{{item.goods_small_logo}}" mode="widthFix" lazy-load></image>
                 </navigator>
                 <!-- 商品信息 -->
@@ -35,20 +35,24 @@
                     <view class="info-price">
                         <view class="prices">￥{{item.goods_price}}</view>
                         <view class="num-tool">
-                            <view class="num-edit">-</view>
+                            <view class="num-edit" bindtap="handleClick" data-index='{{-1}}' data-id="{{item.goods_id}}">-</view>
                             <view class="num">{{item.num}}</view>
-                            <view class="num-edit">+</view>
+                            <view class="num-edit" bindtap="handleClick" data-index='{{1}}' data-id="{{item.goods_id}}">+</view>
                         </view>
                     </view>
                 </view>
             </view>
         </view>
     </view>
+    <!--购物车为空时-->
+    <view class="img" wx:if="{{!cart.length}}">
+       <image src="http://hbimg.b0.upaiyun.com/e1b1467beea0a9c7d6a56b32bac6d7e5dcd914f7c3e6-YTwUd6_fw658" mode="widthFix"></image>
+    </view>
     <!-- 底部工具栏 -->
     <view class="footer-tool">
         <!-- 全选 -->
         <view class="all-check">
-            <checkbox-group bindchange="">
+            <checkbox-group bindchange="allhandleChange">
                 <checkbox checked="{{allChecked}}"></checkbox>全选
             </checkbox-group>
         </view>
@@ -60,6 +64,6 @@
             <view class="baoyou">包邮送货</view>
         </view>
         <!-- 结算 -->
-        <view class="order-pay">结算({{totalNum}})</view>
+        <view class="order-pay" bindtap="navigators">结算({{totalNum}})</view>
     </view>
 </view>

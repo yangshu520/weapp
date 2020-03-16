@@ -121,3 +121,6 @@ page {
   justify-content: center;
   align-items: center;
 }
+.img {
+  margin-top: 80rpx;
+}

@@ -65,7 +65,7 @@
  */
 import regeneratorRuntime from '../../lib/runtime/runtime';
 import { request } from '../../request/index.js'
-import { getSetting, chooseAddress, openSetting } from '../../utils/asyncWx.js'
+import { getSetting, chooseAddress, openSetting, showModal, showTost } from '../../utils/asyncWx.js'
 Page({
     data: {
         // 收获地址
@@ -116,8 +116,31 @@ Page({
         // 选中状态取反
         cart[index].check = !cart[index].check;
         // 把数据重新设置回data中和缓存
-        wx.setStorageSync('cart', cart);
         this.setCate(cart)
+    },
+    // 全选按钮
+    allhandleChange() {
+        const allChecked = !this.data.allChecked;
+        const cart = wx.getStorageSync('cart');
+        cart.forEach((item) => item.check = allChecked);
+        // 把数据重新设置回data中和缓存
+        this.setCate(cart)
+    },
+    // 加减触发事件
+    async handleClick(e) {
+        const { index, id } = e.currentTarget.dataset;
+        const { cart } = this.data;
+        const index1 = cart.findIndex(item => item.goods_id === id);
+        if (index == -1 && cart[index1].num == 1) {
+            const res = await showModal();
+            if (res.confirm) {
+                cart.splice(index1, 1);
+                this.setCate(cart);
+            }
+            return
+        }
+        cart[index1].num += index;
+        this.setCate(cart);
     },
     // 设置购物车状态同时 重新计算底部工具栏的数据 
     setCate(cart) {
@@ -138,6 +161,18 @@ Page({
             allChecked,
             totalNum,
             totalPrice
-        })
+        });
+        wx.setStorageSync('cart', cart);
+    },
+    // 点击结算去到结算页面
+    async navigators() {
+        const { address, totalNum } = this.data;
+        if (!address.userName) {
+            await showTost({ title: '请添加收获地址' })
+        } else if (totalNum === 0) {
+            await showTost({ title: '您还没有商品' })
+        } else {
+            wx.navigateTo({ url: '/pages/pay/index' });
+        }
     }
 })

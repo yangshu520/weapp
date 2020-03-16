@@ -5,7 +5,7 @@
     <view class="index-swiper">
         <swiper class="" indicator-dots indicator-active-color="#fff" indicator-color="red" autoplay interval="3000" duration="1000" circular>
             <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
-                <navigator class="" url="" open-type="navigate">
+                <navigator class="" open-type="navigate" url="/pages/goods_list/index?cid={{randomData}}" bindtap="click">
                     <image src="{{item.image_src}}" mode="widthFix" lazy-load></image>
                 </navigator>
             </swiper-item>
@@ -13,7 +13,7 @@
     </view>
     <!-- 导航开始 -->
     <view class="index-cate">
-        <navigator url="" wx:for="{{catesList}}" wx:key="name">
+        <navigator url="" wx:for="{{catesList}}" wx:key="name" url="/pages/goods_list/index?cid={{randomData}}" bindtap="click">
             <image src="{{item.image_src}}" mode="widthFix"></image>
         </navigator>
     </view>
@@ -24,7 +24,7 @@
                 <image src="{{item1.floor_title.image_src}}" mode="widthFix" lazy-load></image>
             </view>
             <view class="floor-list">
-                <navigator wx:for="{{item1.product_list}}" wx:key="name" wx:for-item="item2" wx:for-index="index2">
+                <navigator wx:for="{{item1.product_list}}" wx:key="name" wx:for-item="item2" wx:for-index="index2" url="/pages/goods_list/index?cid={{randomData}}" bindtap="click">
                     <image src="{{item2.image_src}}" mode="{{index2===0?'widthFix':'scaleToFill'}}"></image>
                 </navigator>
             </view>
