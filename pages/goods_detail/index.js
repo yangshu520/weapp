@@ -26,20 +26,29 @@ import regeneratorRuntime from '../../lib/runtime/runtime';
 import { request } from '../../request/index.js'
 Page({
     data: {
-        goodsobj: {}
+        goodsobj: {},
+        // 是否被收藏
+        isCollect: false
     },
     // 商品全局对象
     GoodsInfo: {},
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function(options) {
+    onShow: function() {
+        let pages = getCurrentPages();
+        let currentPages = pages[pages.length - 1]
+        console.log(currentPages)
+        let options = currentPages.options
         const { goods_id } = options
         this.goodsobj(goods_id)
     },
     async goodsobj(goods_id) {
         const res = await request({ url: '/goods/detail', data: { goods_id } });
         this.GoodsInfo = res;
+        // 是不是被收藏
+        let collect = wx.getStorageSync('collect') || [];
+        const isCollect = collect.some((item, index) => item.goods_id === this.GoodsInfo.goods_id)
         this.setData({
             goodsobj: {
                 goods_id: res.goods_id,
@@ -48,7 +57,8 @@ Page({
                 //iphone部分手机 不支持web格式图片
                 goods_introduce: res.goods_introduce.replace(/\.webp/g, '.jpg'),
                 pics: res.pics
-            }
+            },
+            isCollect
         })
     },
     // 点击轮播图进行大图预览
@@ -87,5 +97,34 @@ Page({
             duration: 2000, //延迟时间,
             mask: true, //显示透明蒙层，防止触摸穿透,
         });
+    },
+    //点击收藏
+    handleShouCang(e) {
+        let isCollect = false
+            // 获取缓存中的数据
+        let collect = wx.getStorageSync('collect') || [];
+        // 判断是否存在该商品
+        let index = collect.findIndex((item, index) => item.goods_id === this.GoodsInfo.goods_id);
+        if (index === -1) {
+            collect.push(this.GoodsInfo);
+            isCollect = true;
+            wx.showToast({
+                title: '收藏成功', //提示的内容,
+                icon: 'success', //图标,
+                duration: 2000, //延迟时间,
+            });
+        } else {
+            collect.splice(index, 1);
+            isCollect = false
+            wx.showToast({
+                title: '取消成功', //提示的内容,
+                icon: 'info', //图标,
+                duration: 2000, //延迟时间,
+            });
+        }
+        wx.setStorageSync('collect', collect);
+        this.setData({
+            isCollect
+        })
     }
 })

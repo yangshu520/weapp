@@ -1,0 +1,118 @@
+page{
+    background-color: #edece8;
+}
+.user-info{
+    height: 45vh;
+    background-color: var(--colorA);
+    overflow: hidden;
+    position: relative;
+    .user-img{
+        position: relative;
+        .user-bg{
+            height: 45vh;
+            // 高斯模糊
+            filter: blur(10rpx);
+        }
+        .user-content{
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            transform: translateX(-50%);
+            text-align: center;
+            .user-icon{
+                width: 150rpx;
+                height: 150rpx;
+                border-radius: 50%;
+            }
+            .user-name{
+                color: #fff;
+                margin-top: 40rpx;
+                font-size: 35rpx;
+            }
+        }
+    }
+    .info-btn{
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 2rpx solid #fff;
+        border-radius: 10rpx;
+        navigator{
+            color: #fff;
+            font-size: 40rpx;
+            padding: 35rpx;
+        }
+    }
+}
+
+.user-content{
+    position: relative;
+    .user-main{
+        color: #666;
+        position: absolute;
+        top: -40rpx;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        padding-bottom: 50rpx;
+        .history-wrap{
+            background-color: #fff;
+            display: flex;
+            navigator{
+                flex: 1;
+                text-align: center;
+                padding: 10rpx 0;
+                .his-num{
+                    color:var(--colorA)
+                }
+                .his.name{}
+            }
+        }
+        .order-wrap{
+            background-color: #fff;
+            margin-top: 30rpx;
+            .order-title{
+                padding: 20rpx;
+                border-bottom: 1rpx solid #ccc;
+            }
+            .order-content{
+                display: flex;
+                navigator{
+                    padding: 15rpx 0;
+                    flex: 1;
+                    text-align: center;
+                    .iconfont{
+                        color:var(--colorA);
+                        font-size: 40rpx;
+                    }
+                    .order-name{}
+                }
+            }
+        }
+        .address-wrap{
+            margin-top: 30rpx;
+            padding: 20rpx;
+            background-color: #fff;
+        }
+        .info-wrap{
+            margin-top: 30rpx;
+            background-color: #fff;
+            .info-item{
+                padding: 20rpx;
+                border-bottom: 1rpx solid #ccc;
+            }
+            .info-concat{
+                padding: 20rpx;
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1rpx solid #ccc;
+            }
+        }
+        .recommend-wrap{
+            margin-top: 30rpx;
+            padding: 20rpx;
+            background-color: #fff;
+        }
+    }
+}

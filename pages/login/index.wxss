@@ -1,1 +1,5 @@
-/* pages/login/index.wxss */
+button {
+    font-weight: 0;
+    width: 100%;
+    margin: 40rpx 0;
+}

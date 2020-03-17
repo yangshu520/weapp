@@ -40,6 +40,9 @@ page {
   flex-direction: column;
   border-left: 1px solid #ccc;
 }
+.detail .detail-name-row .detail-collect .icon-shoucang1 {
+  color: var(--colorA);
+}
 .detail .detail-info .info-title {
   font-size: 32rpx;
   color: var(--colorA);

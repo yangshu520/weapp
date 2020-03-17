@@ -1,1 +1,114 @@
-/* pages/user/index.wxss */
+page {
+  background-color: #edece8;
+}
+.user-info {
+  height: 45vh;
+  background-color: var(--colorA);
+  overflow: hidden;
+  position: relative;
+}
+.user-info .user-img {
+  position: relative;
+}
+.user-info .user-img .user-bg {
+  height: 45vh;
+  filter: blur(10rpx);
+}
+.user-info .user-img .user-content {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.user-info .user-img .user-content .user-icon {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.user-info .user-img .user-content .user-name {
+  color: #fff;
+  margin-top: 40rpx;
+  font-size: 35rpx;
+}
+.user-info .info-btn {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2rpx solid #fff;
+  border-radius: 10rpx;
+}
+.user-info .info-btn navigator {
+  color: #fff;
+  font-size: 40rpx;
+  padding: 35rpx;
+}
+.user-content {
+  position: relative;
+}
+.user-content .user-main {
+  color: #666;
+  position: absolute;
+  top: -40rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  padding-bottom: 50rpx;
+}
+.user-content .user-main .history-wrap {
+  background-color: #fff;
+  display: flex;
+}
+.user-content .user-main .history-wrap navigator {
+  flex: 1;
+  text-align: center;
+  padding: 10rpx 0;
+}
+.user-content .user-main .history-wrap navigator .his-num {
+  color: var(--colorA);
+}
+.user-content .user-main .order-wrap {
+  background-color: #fff;
+  margin-top: 30rpx;
+}
+.user-content .user-main .order-wrap .order-title {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.user-content .user-main .order-wrap .order-content {
+  display: flex;
+}
+.user-content .user-main .order-wrap .order-content navigator {
+  padding: 15rpx 0;
+  flex: 1;
+  text-align: center;
+}
+.user-content .user-main .order-wrap .order-content navigator .iconfont {
+  color: var(--colorA);
+  font-size: 40rpx;
+}
+.user-content .user-main .address-wrap {
+  margin-top: 30rpx;
+  padding: 20rpx;
+  background-color: #fff;
+}
+.user-content .user-main .info-wrap {
+  margin-top: 30rpx;
+  background-color: #fff;
+}
+.user-content .user-main .info-wrap .info-item {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.user-content .user-main .info-wrap .info-concat {
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #ccc;
+}
+.user-content .user-main .recommend-wrap {
+  margin-top: 30rpx;
+  padding: 20rpx;
+  background-color: #fff;
+}
